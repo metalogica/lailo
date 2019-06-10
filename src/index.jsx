@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 
 // Router
 import { Provider } from 'react-redux';
-import { createStore, combineReducers, applyMiddleware, compose }from 'redux';
-import { BrowserRouter as Router, Route, Switch, Link, Redirect } from'react-router-dom';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
 import { createBrowserHistory as history } from 'history';
 
 // Middleware
@@ -16,6 +16,7 @@ const middleware = composeEnhancers(applyMiddleware(logger, reduxPromise))
 
 // Components and Containers
 import App from './components/app.jsx';
+import App1 from './components/app1.jsx';
 
 // DB
 import projects from './data/projects.js'
@@ -36,13 +37,7 @@ import '../assets/stylesheets/application.scss';
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={createStore(reducers, initialState, middleware)}>
-    <Router history={history}>
-      <Switch>
-        <Route path="/contact" exact component={App}/>
-        <Route path="/contact1" exact component={App}/>
-        <Redirect from="/" to="/contact"/>
-      </Switch>
-    </Router>
+    <App/>
   </Provider>,
   document.getElementById('root')
 );
