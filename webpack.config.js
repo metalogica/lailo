@@ -37,7 +37,7 @@ module.exports = {
       'script-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"],
       'style-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"]
     }, {
-      enabled: false,
+      enabled: true,
       hashingMethod: 'sha256',
       hashEnabled: {
         'script-src': true,
