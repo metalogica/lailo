@@ -37,10 +37,11 @@ import '../assets/stylesheets/application.scss';
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={createStore(reducers, initialState, middleware)}>
-    <Router history={history()}>
+    <Router history={history()} basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path='/app' exact component={App}/>
         <Route path='/app1' exact component={App1}/>
+        <Route component={() => (<div>404 Not found </div>)} />
         <Redirect from='/' to='/app'/>
       </Switch>
     </Router>
