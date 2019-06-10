@@ -1,6 +1,6 @@
 {
   "license": "UNLICENSED",
-  "homepage": "https://catonmat.github.io/lailo",
+  "homepage": "http://www.catonmat.github.io/lailo",
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
