@@ -33,12 +33,12 @@ const reducers = combineReducers({
 
 //Stylesheets
 import '../assets/stylesheets/application.scss';
-console.log(process.env.PUBLIC_URL);
+console.log(process.env);
 
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={createStore(reducers, initialState, middleware)}>
-    <Router history={history()} basename={process.env.PUBLIC_URL}>
+    <Router history={history()} basename={'/lailo'}>
       <Switch>
         <Route path='/app' exact component={App}/>
         <Route path='/app1' exact component={App1}/>
