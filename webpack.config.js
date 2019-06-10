@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CspHtmlWebpackPlugin = require('csp-html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -8,8 +9,44 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      template: '!!html-loader!templates/index.html',
+      favicon: path.resolve(__dirname, 'assets/images/lailo-favicon.ico'),
       title: 'Lailo Web Design & Development',
-      template: '!!html-loader!templates/index.html'
+      cspPlugin: {
+        enabled: true,
+        policy: {
+          'base-uri': "'self'",
+          'object-src': "'none'",
+          'script-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"],
+          'style-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"]
+        },
+        hashEnabled: {
+          'script-src': true,
+          'style-src': true
+        },
+        nonceEnabled: {
+          'script-src': true,
+          'style-src': true
+        }
+      }
+    }),
+    new CspHtmlWebpackPlugin({
+      'font-src': "'self' data:;",
+      'base-uri': "'self'",
+      'object-src': "'none'",
+      'script-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"],
+      'style-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"]
+    }, {
+      enabled: false,
+      hashingMethod: 'sha256',
+      hashEnabled: {
+        'script-src': true,
+        'style-src': true
+      },
+      nonceEnabled: {
+        'script-src': true,
+        'style-src': true
+      }
     })
   ],
   devtool: 'sourcemap',

@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware, compose }from 'redux';
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from'react-router-dom';
-import { createHistory as history } from 'history';
+import { createBrowserHistory as history } from 'history';
 
 // Middleware
 import reduxPromise from 'redux-promise';
@@ -39,6 +39,7 @@ ReactDOM.render(
     <Router history={history}>
       <Switch>
         <Route path="/contact" exact component={App}/>
+        <Route path="/contact1" exact component={App}/>
         <Redirect from="/" to="/contact"/>
       </Switch>
     </Router>
