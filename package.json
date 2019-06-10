@@ -27,16 +27,14 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "compose": "^0.1.2",
     "core-js": "3",
-    "express": "^4.17.1",
-    "express-favicon": "^2.0.1",
     "history": "^4.9.0",
-    "path": "^0.12.7",
-    "react": "^16.8.6",
-    "react-dom": "16.2",
+    "react": "^16.8.3",
+    "react-dom": "16.8.3",
     "react-redux": "^7.0.3",
-    "react-router-dom": "^5.0.1",
-    "redux": "^4.0.1",
+    "react-router-dom": "^5.0.0",
+    "redux": "^3.7.2",
     "redux-form": "^8.2.3",
     "redux-logger": "^3.0.6",
     "redux-promise": "^0.6.0"

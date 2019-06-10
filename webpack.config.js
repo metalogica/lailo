@@ -8,6 +8,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: 'Lailo Web Design & Development',
       template: '!!html-loader!templates/index.html'
     })
   ],
