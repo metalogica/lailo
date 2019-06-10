@@ -3,7 +3,7 @@ const projects = [
     title: 'Dharma Taylor',
     description: 'London-based fashion designer Dharma Taylor specialises in menswear.',
     summary: 'The website allows the user to create blog content with automated meta tags and sitemap generation.',
-    logo: '../../assets/images/asyla-logo.png'
+    logo: '../../assets/images/asyla-logo.png',
     stack: [
       {
         name: 'Vue JS',
@@ -20,7 +20,7 @@ const projects = [
     ],
     links: {
       site: 'www.dharmataylor.com',
-      admin-console: ''
+      admin: ''
     }
   },
   {

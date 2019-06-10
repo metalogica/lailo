@@ -18,13 +18,16 @@ const middleware = composeEnhancers(applyMiddleware(logger, reduxPromise))
 import App from './components/app.jsx';
 
 // DB
-
+import projects from './data/projects.js'
 // Initial State
 const initialState = {
+  projects: projects
 };
 
 // Reducers
+import projectsReducer from './reducers/projects_reducer.js';
 const reducers = combineReducers({
+  projects: projectsReducer
 });
 
 //Stylesheets
