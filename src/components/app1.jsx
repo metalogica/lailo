@@ -7,7 +7,7 @@ class App1 extends Component {
   }
 
   render() {
-    return(<div>'app renders'</div>)
+    return(<div>'App 1 renders too'<Link to='/'>To Original App</Link></div>)
   }
 }
 

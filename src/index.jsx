@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 // Router
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
+import { Router, Route, Switch, Link, Redirect } from 'react-router-dom';
 import { createBrowserHistory as history } from 'history';
 
 // Middleware
@@ -37,7 +37,13 @@ import '../assets/stylesheets/application.scss';
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={createStore(reducers, initialState, middleware)}>
-    <App/>
+    <Router history={history()}>
+      <Switch>
+        <Route path='/app' exact component={App}/>
+        <Route path='/app1' exact component={App1}/>
+        <Redirect from='/' to='/app'/>
+      </Switch>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
