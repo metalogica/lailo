@@ -33,6 +33,7 @@ const reducers = combineReducers({
 
 //Stylesheets
 import '../assets/stylesheets/application.scss';
+console.log(process.env.PUBLIC_URL);
 
 // render an instance of the component in the DOM
 ReactDOM.render(
